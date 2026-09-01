@@ -102,7 +102,7 @@ mywatch/
 
 ## 👤 Pengembang
 
-**Nova Zebua (S.Kom)**
+**Nova Zebua**
 - Instagram: [@zebua_1011](https://www.instagram.com/zebua_1011)
 - WhatsApp: [+62 812-1893-9696](https://wa.me/6281218939696)
 - GitHub: [Novazeb](https://github.com/Novazeb)
