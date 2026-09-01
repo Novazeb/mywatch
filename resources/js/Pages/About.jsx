@@ -29,7 +29,7 @@ export default function About() {
                     initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
                     className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center mb-32"
                 >
-                    <div className="aspect-[3/4] bg-gray-200 rounded-2xl overflow-hidden shadow-2xl">
+                    <div className="aspect-[3/4] bg-gray-200 dark:bg-zinc-800 rounded-2xl overflow-hidden shadow-2xl">
                         <img
                             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop"
                             alt="Nova - Developer"
@@ -39,7 +39,7 @@ export default function About() {
                     <div>
                         <h2 className="text-3xl font-bold mb-6 tracking-widest uppercase">The Architect</h2>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                            Halo, saya **Nova**, seorang lulusan Sistem Komputer (S.Kom) dari Universitas Pembangunan Panca Budi. Ketertarikan saya pada dunia IT membawa saya untuk tidak hanya membangun aplikasi yang berfungsi, tetapi juga memiliki nilai estetika yang tinggi.
+                            Halo, saya <strong className="text-gray-900 dark:text-white font-bold">Nova</strong>, seorang lulusan Sistem Komputer (S.Kom) dari Universitas Pembangunan Panca Budi. Ketertarikan saya pada dunia IT membawa saya untuk tidak hanya membangun aplikasi yang berfungsi, tetapi juga memiliki nilai estetika yang tinggi.
                         </p>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             Dengan pengalaman riset di Badan Riset dan Inovasi Daerah serta pengalaman membangun sistem pemesanan makanan digital untuk tugas akhir saya, saya percaya bahwa teknologi terbaik adalah teknologi yang terasa "tidak ada" karena kemudahannya.
@@ -50,7 +50,7 @@ export default function About() {
                 {/* Bagian 3: Technical Stack */}
                 <motion.section
                     initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                    className="border-t border-gray-300 pt-20"
+                    className="border-t border-gray-300 dark:border-zinc-800 pt-20"
                 >
                     <h2 className="text-sm uppercase tracking-[0.5em] mb-12 text-center text-gray-400">Engineering the Experience</h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">

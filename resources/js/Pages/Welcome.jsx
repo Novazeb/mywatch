@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import MainLayout from '@/Layouts/MainLayout';
 
 
-export default function Welcome({ watches }) {
+export default function Welcome({ watches = [] }) {
     const heroImages = [
         "https://images.unsplash.com/photo-1617625802912-cde586faf331?q=80&w=1632&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=1600&auto=format&fit=crop",
@@ -73,7 +73,7 @@ export default function Welcome({ watches }) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-                    className="text-4xl md:text-7xl font-extrabold text-black dark:text-white uppercase tracking-[0.5em] ml-[0.5em] text-center drop-shadow-md"
+                    className="text-4xl md:text-7xl font-extrabold text-white uppercase tracking-[0.5em] ml-[0.5em] text-center drop-shadow-lg"
                 >
                     MYWATCH
                 </motion.h1>
@@ -88,7 +88,7 @@ export default function Welcome({ watches }) {
                     <a
                         href="#explore-content"
                         onClick={scrollToContent}
-                        className="text-xs uppercase tracking-[0.3em] font-semibold text-black dark:text-white hover:text-gray-500 transition-colors cursor-pointer"
+                        className="text-xs uppercase tracking-[0.3em] font-semibold text-white/80 hover:text-white transition-colors cursor-pointer"
                     >
                         scroll
                     </a>
