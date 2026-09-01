@@ -4,7 +4,13 @@ import { Link } from '@inertiajs/react';
 import Footer from '@/Components/Footer';
 
 export default function MainLayout({ children }) {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('theme') === 'dark' ||
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        }
+        return false;
+    });
     // State baru untuk mengontrol menu mobile
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -16,8 +22,10 @@ export default function MainLayout({ children }) {
     useEffect(() => {
         if (isDarkMode) {
             document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
         } else {
             document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
         }
     }, [isDarkMode]);
 
@@ -86,13 +94,13 @@ export default function MainLayout({ children }) {
                     >
                         <ul className="text-center space-y-8 text-2xl font-light tracking-[0.3em] uppercase">
                             <motion.li initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-                                <Link href="/#collection" onClick={closeMenu} className="hover:text-gray-500 transition-colors">Collection</Link>
+                                <Link href="/#collection" onClick={closeMenu} className="hover:text-gray-500 dark:hover:text-gray-400 transition-colors">Collection</Link>
                             </motion.li>
                             <motion.li initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-                                <Link href="/#design" onClick={closeMenu} className="hover:text-gray-500 transition-colors">Design</Link>
+                                <Link href="/#design" onClick={closeMenu} className="hover:text-gray-500 dark:hover:text-gray-400 transition-colors">Design</Link>
                             </motion.li>
                             <motion.li initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
-                                <Link href="/about" onClick={closeMenu} className="hover:text-gray-500 transition-colors">About</Link>
+                                <Link href="/about" onClick={closeMenu} className="hover:text-gray-500 dark:hover:text-gray-400 transition-colors">About</Link>
                             </motion.li>
                         </ul>
                     </motion.div>
