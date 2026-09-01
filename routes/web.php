@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/watch/{slug}', function ($slug) {
     // Cari data jam tangan berdasarkan kolom 'slug'
-    $watch = App\Models\Watch::where('slug', $slug)->firstOrFail();
+    $watch = Watch::where('slug', $slug)->firstOrFail();
 
     // Kirim data ke halaman React bernama 'WatchDetail'
     return Inertia::render('WatchDetail', [
